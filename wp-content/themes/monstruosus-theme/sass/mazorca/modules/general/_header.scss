@@ -1,0 +1,577 @@
+.header {
+	$col-1: 100%/12;
+	&__JS {
+		height: 140px;
+		max-width: 1240px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 50px;
+		z-index: 4;
+		display: flex;
+		transition: left 0.2s;
+	    &--fix {
+	    	position: fixed;
+	    }
+
+	    @include under(sm) {
+			height:auto;
+			flex-direction: column;
+		    z-index: 12;
+		    margin-top: 0px;
+		    margin-bottom: 00px;
+	    }
+	}
+
+	&__container {
+		display: flex;
+	    flex-direction: row;
+	    align-items: center;
+	    width: 100%;
+	    @include under(sm) {
+			flex-direction: column;
+	    }
+	}
+
+	&__brand {
+		width: 424px;
+		@include under(sm) {
+			width: 100%;
+			height: 60px;
+		    padding: 15px 20px;
+		    margin: 0px 0px;
+		    display: flex;
+    		align-items: center;
+    		justify-content: space-between;
+		}
+	}
+
+	&__logo {
+		width: 245px;
+		height: auto;
+		display: flex;
+		align-items: center;
+		@include under(sm) {
+		    width: 60%;
+		    height: auto;
+		}
+
+		&-image {
+			height: 100%;
+		    width: 100%;
+		    object-fit: contain;
+		    // margin-left: 53px;
+		    @include under(sm) {
+		    	margin-left: 0px;
+		    	width: 245px;
+		    }
+		}
+
+		&-image--mobil {
+			display: none;
+			@include under(sm) {
+				display: none;
+				width: 218px;
+				height: 98px;
+				margin-top: 20px;
+				margin-bottom: 40px;
+			}
+		}
+
+		&-close {
+			@include over(sm) {
+				display: none;
+			}
+			@include under(sm) {
+				display: block;
+				font-weight: bold;
+				font-size: 13px;
+				text-transform: uppercase;
+				border: none;
+			    outline: none;
+			    cursor: pointer;
+			    background-color: white;
+			    //menu responsivo
+				position: absolute;
+				z-index: 2;
+				// right: 14px;
+				right: 23px;
+				top: 17px;
+
+			}
+			&.opacity {
+				right: 100%;
+				overflow: auto;
+				z-index: 2;
+				@include under(sm) {
+					transition: right 0.2s;
+					right: 23px;
+					z-index: 5;
+    				position: fixed;
+				}
+			}
+
+			&.close {
+				// width: 30px;
+				// position: absolute;
+				// height: 21px;
+			    display: none;
+			    &.view {
+			    	display: block;
+			    }
+
+			    img {
+					width: 18px;
+					height: 21px;
+				}
+			}
+
+			&.open {
+				// width: 32px;
+				// position: absolute;
+				// height: 21px;
+				img {
+					width: 20px;
+					height: 21px;
+				}
+			}
+		}
+
+		&-desktop {
+			@include under(sm) {
+				display: none;
+			}
+		}
+
+		&-mobil {
+			@include under(sm) {
+				display: flex;
+    			flex-direction: row;
+    			height: 156px;
+			}
+		}
+
+	}
+
+	&__menu {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+
+		@include under(sm) {
+			flex-direction: column;
+			opacity: 0;
+			position: fixed;
+			left: 100%;
+			top: 59px;
+			overflow: auto;
+			width: 1px;
+    		height: 1px;
+    		transition: left 0.2s;
+			z-index: 12;
+			&.show {
+				opacity:1;
+				width: 100%;
+				height:auto;
+				left: 0;
+    			transition: left 0.4s;
+
+			}
+		}
+
+
+		&-list {
+
+		}
+
+		&-items {
+			width: auto;
+			margin-right: 0px;
+			//items dentro de menu
+			li {
+				text-transform: lowercase;
+				width: auto;
+				height: auto;
+				margin: 0 20px;
+			    text-align: center;
+			    cursor: pointer;
+			    position: relative;
+			    &:last-child {
+			    	margin: 0 10px 0px 20px;
+			    }
+			    @include under(sm-big){
+			    	margin: 0 10px;
+			    	&:last-child {
+				    	margin: 0 10px 0px 10px;
+				    }
+			    }
+
+			    @include under(sm){
+			    	width: 100%;
+			    	//altura, modificar posteriormente
+			    	height: calc(50vh/ 5);
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: center;
+					margin: 0 0px !important;
+			    }
+
+			}
+
+			li:before{
+				position: absolute;
+		        bottom: -7px;
+		        left: 0px;
+		        width: 0px;
+		        height: 2.6px;
+		        background-color: c(black);
+		        content: "";
+		        transition: width 0.5s ease, background-color 0.5s ease;
+		        // transition con opacidad
+		        // width: 100%;
+		        // transform: translateY(15px);
+		        // opacity: 0;
+		        // transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+		        @include under(sm){
+		        	top: 16px;
+		        	width: 44%;
+		        	display: none;
+		        }
+			}
+			li:hover:before{
+				background-color: c(black);
+				width: 100%;
+				color: c(black);
+				// transition con opacidad
+				// opacity:1;
+				// transform: translateY(15px);
+			}
+
+			li.current-menu-item:before{
+				background-color: c(black);
+				width: 100%;
+				color: c(black);
+				// transition con opacidad
+				// opacity:1;
+				// transform: translateY(15px);
+			}
+		}
+
+		&-icons {
+			&--list {
+				width: auto;
+				// margin-right: 40px;
+			}
+		}
+	}
+
+	&__list {
+		@extend %link-menu;
+		// width: 90%;
+		height: auto;
+		list-style: none;
+		padding: 0;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-end;
+
+		@include under(sm){
+		    width: 100%;
+			flex-direction: column;
+			margin-right: 0px;
+			// display: none;
+
+			//MENU RESPONSIVO
+			// top: 100px;
+			top: 0px;
+			left: 100%;
+			width: 100%;
+			// height: calc(100vh - 100px);
+			// height:100vh;
+			//height: auto;
+			padding: 0px 25px 0px;
+			overflow: auto;
+			-webkit-overflow-scrolling: touch;
+			// position: fixed;
+			background: #FFF;
+			z-index: 4;
+			transition: left 0.2s;
+			justify-content: center;
+		}
+
+	}
+
+
+
+
+
+
+	&__link {
+		//Display flex sirve para centrar el texto en cuanto a altura
+		@include under(sm){
+			width: 100%;
+		    height: 100%;
+		    align-items: center;
+		    display: flex;
+		    justify-content: center;
+		}
+	}
+
+	&__icon {
+		// padding: 8px 10px;
+		padding: 0px 10px;
+		margin: 0 10px;
+		width: auto;
+    	height: auto;
+		text-align: center;
+		cursor: pointer;
+		position: relative;
+
+		@include under(sm) {
+			width: 100%;
+			height: calc(50vh/ 5);
+			padding: 0px 0px;
+			margin: 0 0px;
+		}
+		&-search, &-cart, &-close {
+			position: relative;
+			@include under(sm) {
+				display: initial;
+				top: 50%;
+			}
+			&:after {
+				position: absolute;
+
+			}
+		}
+		//Icono del header que ejecuta el search
+		&-search {
+			&:after {
+				width: 14px;
+			    height: 14px;
+				left: -8px;
+				bottom: -5px;
+			    content: url(../images/search.svg);
+			}
+		}
+		//Icono dentro del search
+		&--search {
+			&:after {
+				position: absolute;
+				width: 19px;
+				height: auto;
+				left: 3px;
+				content: url(../images/search.svg);
+				top: 37%;
+				z-index: 1;
+			}
+			@include under(sm) {
+				&:after {
+				    left: 20px;
+					top: 29%;
+				}
+			}
+		}
+		&-submit {
+			&:after {
+				position: absolute;
+				width: 11px;
+				height: auto;
+				right: 15px;
+				content: url(../images/before.svg);
+				top: 37%;
+				z-index: 1;
+			}
+			@include under(sm) {
+				padding-left: 20px;
+				&:after {
+				    right: 20px;
+					top: 29%;
+				}
+			}
+
+		}
+		// &--search {
+		// 	&:after {
+		// 		width: 14px;
+		// 	    height: 14px;
+		// 		left: -8px;
+		// 		bottom: -25px;
+		// 	    content: url(../images/search.svg);
+		// 	}
+		// }
+		&.close {
+			&:after {
+				// bottom: 1px;
+				width: 13px;
+			    height: 13px;
+				left: 1px;
+				bottom: -5px;
+				position: absolute;
+			    content: url(../images/close.svg);
+			}
+			.header__icon-search:after{
+				opacity: 0;
+			}
+		}
+		&.open {
+
+		}
+		&-cart {
+			@include under(sm) {
+				top: 40%;
+			}
+ 			&:after {
+				width: 19px;
+			    height: 15px;
+				right: -22px;
+				bottom: 4px;
+				content: url(../images/cart.svg);
+			}
+		}
+		//desaparece la lupita en movil
+		&-movil {
+			@include over(sm) {
+				display: block;
+			}
+			@include under(sm) {
+				display: none;
+			}
+		}
+	}
+
+	//Icono en movil
+	&__iconMovil {
+		padding: 8px 10px;
+		margin: 0 10px;
+		width: auto;
+    	height: auto;
+		text-align: center;
+		cursor: pointer;
+		position: relative;
+
+		@include under(sm) {
+			width: 100%;
+			height: auto;
+		}
+
+		//Icono del header que ejecuta el search
+
+		&-searchMovil {
+			position: relative;
+			@include under(sm) {
+				display: initial;
+				top: 50%;
+			}
+			&:after {
+				position: absolute;
+			    bottom: -7px;
+				width: 14px;
+			    height: 14px;
+				left: -14px;
+			    content: url(../images/search.svg);
+			}
+
+		}
+		&.close {
+			&:after {
+				position: absolute;
+				// top: 44%;
+				top: 16%;
+				width: 11px;
+				height: auto;
+				right: 23px;
+			    content: url(../images/close.svg);
+			}
+			.header__iconMovil-searchMovil:after{
+				opacity: 0;
+			}
+		}
+		&.open {
+
+		}
+	}
+
+	&__search-movil {
+		@include over(sm) {
+			display: none;
+		}
+		@include under(sm) {
+			display: block;
+			position: absolute;
+			right: 20%;
+			top: 22px;
+			.header__icon-movil {
+			    display: block;
+			}
+		}
+	}
+
+	&__searchbar {
+	    z-index: 11;
+		background: #fff;
+		box-shadow: 0 4px 2px -2px #eee;
+		width:90%;
+		max-width: 1140px;
+		height: 62px;
+		position: absolute;
+		top: 100px;
+		left: 50%;
+	    transform: translate(-50%, 0%);
+	    display: none;
+	    @include under(sm) {
+	    	top: 59px;
+	        width: 101%;
+	        height: 45px;
+	        box-shadow: none;
+	        border-top: 1px solid #eee;
+
+	    }
+	    &-form {
+	    	display: flex;
+	    	@include under(sm) {
+    			padding: 0px 20px;
+			}
+	    }
+		&-submit {
+			display: block;
+			margin-top: 6px;
+			background: none;
+			color: #717171;
+			width: 4%;
+			border: 0;
+			outline: none;
+			cursor: pointer;
+		}
+		&-input {
+			display: block;
+			border: 0;
+			outline: none;
+			padding: 0 0 0 30px;
+			height: 60px;
+			line-height: 60px;
+			width: 96%;
+			color: c(grey-dark);
+			font-family: f(circular-bold);
+			font-size: 18px;
+			font-weight: 300;
+			position: relative;
+			&::placeholder {
+				color: c(grey);
+			}
+			@include under(sm) {
+    			height: 44px;
+    			line-height: 50px;
+			}
+
+		}
+	}
+}
+
+
+.show {
+	// display: block;
+	left: 0;
+    transition: left 0.4s;
+}

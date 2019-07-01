@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.98 20.49"><defs><style>.cls-1{fill:#231f20;}</style></defs><title>Recurso 1</title><g id="Capa_2" data-name="Capa 2"><g id="Layer_1" data-name="Layer 1"><polygon class="cls-1" points="28.98 9.82 1.58 9.82 10.8 0.6 10.2 0 0 10.2 10.29 20.49 10.89 19.89 1.67 10.67 28.98 10.67 28.98 9.82"/></g></g></svg>

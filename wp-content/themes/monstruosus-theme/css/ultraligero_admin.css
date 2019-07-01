@@ -1,0 +1,10 @@
+.cltvo_gallery_container_JS {
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.gallery__image {
+	margin-right: 10px;
+	margin-bottom: 10px;
+}

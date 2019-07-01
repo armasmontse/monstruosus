@@ -1,0 +1,15 @@
+%link {
+	cursor: pointer;
+	text-decoration: none;
+
+	&:hover,
+	&:active,
+	.selected {
+	}
+}
+
+%link-menu {
+	color: black;
+	font-family: f(circular-bold);
+	font-size: 18px;
+}

@@ -1,0 +1,28 @@
+%paragraph {
+    font-family: f(sans);
+}
+%paragraph-template, .paragraph-template {
+    font-family: f(circular-bold);
+    font-size: 18.23px;
+	line-height: 23.69px;
+	letter-spacing: 1px;
+	font-weight: 300;
+}
+
+%paragraph-legals, .paragraph-legals {
+    font-family: f(circular-bold);
+    font-size: 18.23px;
+	line-height: 23.69px;
+	letter-spacing: 1px;
+	font-weight: 300;
+}
+
+/* Single Product */
+%paragraph-single-resumen, .paragraph-single-resumen {
+	font-family: f(circular-bold);
+	font-weight: 300;
+	font-size: 19px;
+    letter-spacing: 1.5px;
+	line-height: 24px;
+	color: c(gray-text);
+}

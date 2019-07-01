@@ -1,0 +1,91 @@
+.nav {
+
+	&.fixed {
+		padding: 0 20px;
+	}
+
+	&-resumen {
+		width: 100%;
+		margin: 0px auto 0px;
+		height: 55px;
+		display: flex;
+		align-items: center;
+
+		@include under(sm){
+			display: none;
+		}
+		// @include under(xs){
+		// 	width: 100%;
+		// 	height: 285px;
+		// }
+	}
+
+	&__product {
+		width: 1200px;
+    	margin: 0 auto;
+
+		&-list {
+			display: flex;
+			@include under(sm){
+				flex-direction: column;
+			}
+		}
+
+		&-items {
+			@extend %label-nav;
+			// padding-right: 30px;
+			width: auto;
+			padding: 0 10px;
+			height: 30px;
+			cursor: pointer;
+			transition: all 0.5s ease;
+			&:first-child {
+				padding-left: 0px;
+			    margin-left: -20px;
+			}
+			@include under(lg) {
+				&:first-child {
+				    margin-left: 0px;
+				}
+			}
+			@include under(sm) {
+				padding: 5px 10px;
+				height: auto;
+				text-align: center;
+			}
+			&:hover {
+				color: c(grey);
+			}
+
+			a {
+				margin: 0 auto;
+				height: 100%;
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+			}
+			&--links {
+
+			}
+
+
+			&.active {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: #dfdede;
+				padding: 0 10px;
+				// margin-right: 20px;
+				border-radius: 0 8px 8px 0px;
+				@include under(sm) {
+					background-color: transparent;
+				    padding: 5px 10px;
+				    margin-right: 0px;
+				}
+			}
+
+		}
+	}
+}

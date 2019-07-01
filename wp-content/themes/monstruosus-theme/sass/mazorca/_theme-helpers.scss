@@ -1,0 +1,33 @@
+.flex-row {
+	flex-direction: row;
+}
+
+.fixed {
+	position: fixed !important;
+    max-width:100% !important;
+    width: 100% !important;
+    left: 0;
+    top: 0;
+    z-index: 999;
+
+    margin: 50px auto 0px;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -0%);
+    background-color: white;
+
+	height: 55px;
+	display: flex;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+	align-items: center;
+	cursor: pointer;
+	box-shadow: 0 4px 10px -4px #ACACAC;
+	@include under(xs) {
+	    position: inherit !important;
+	    box-shadow: none !important;
+	    transform: inherit;
+	}
+}

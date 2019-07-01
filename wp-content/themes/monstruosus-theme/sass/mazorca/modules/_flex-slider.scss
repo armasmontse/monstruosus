@@ -1,0 +1,54 @@
+.flex-control {
+	
+	&-top {
+		width: 75%;
+		order: 2;
+
+		.slick-prev {
+			left: 0%;
+			z-index: 9;
+
+			&:before {
+				color: c(grey);
+			}
+		}
+
+		.slick-next {
+			right: 0%;
+			z-index: 9;
+
+			&:before {
+				color: c(grey);
+			}
+		}
+
+		.slick-slide {
+			height: 100% !important;
+		}
+	}
+	
+	&-nav-box {
+		width: 20%;
+		order: 1;
+
+		@include under(sm) {
+			width: 25%;
+		}
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-direction: row;
+		height: 600px;
+
+		@include under(sm) {
+			height: 560px;
+		}
+	}
+}
+
+.slick-slider,
+.slick-list,
+.slick-track {
+	height: 100% !important;
+}

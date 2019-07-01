@@ -1,0 +1,254 @@
+.slider {
+	/* P R O D U C T */
+	&__product {
+
+		/* T h u m b a i l */
+		&-thumbail {
+			width: calc(8.33% * 9);
+			height: 650px;
+			@include under(sm) {
+				width: 100%;
+				// height: 650px;
+			    height: calc(100vh - 35vh);
+			}
+			.gallery {
+				&-top {
+					height: 80%;
+					width: 100%;
+				}
+			}
+
+			&--image {
+				width: 100%;
+				height: 650px !important;
+				@include under(sm) {
+					height: auto !important;
+				}
+				img {
+					height: 100%;
+					width: 100%;
+					object-fit: contain;
+				}
+			}
+				
+		}
+		
+		/* G a l l e r y */
+		&-gallery {
+			width: calc(8.33% * 3);
+			height: 650px;
+			margin-right: 45px !important;
+			@include under(sm) {
+				width: 100%;
+				height: calc(100vh - 80vh);
+				margin-right: 0 !important;
+				margin-bottom: 0px !important;
+				// margin-top: 20px !important;
+			}
+
+			&--image {
+				opacity: 1 !important;
+				height: 161px !important;
+				@include over(sm) {
+					width: 100% !important;
+				}
+				@include under(sm) {
+					width: 100%;
+					height: 180px !important;
+				}
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: contain;
+				}
+			}
+
+			/* se cambian iconos de slider show product */
+				
+			
+			&--next, &--prev {
+				background-image: none !important;
+				cursor: pointer;
+				@include over(sm){
+					padding: 10px !important;
+					width: 35px !important;
+					height: 45px !important;
+				}
+				@include under(sm){
+					width: 22px !important;
+					height: 40px !important;
+					cursor: pointer;
+				}
+			}
+
+			&--next {
+				@include over(sm){
+					transform: rotate(90deg) !important;
+					// background-color: red !important;
+					position: absolute;
+					left: 10% !important;
+					top: 101.5% !important;
+				}
+				@include under(sm){
+					// top: 90% !important;
+					display: none;
+				}
+			}
+
+			&--prev {
+				@include over(sm){
+					transform: rotate(90deg);
+					// background-color: red !important;
+					position: absolute;
+					left: 10% !important;
+					top: -1.5% !important;
+				}
+				@include under(sm){
+					// top: 90% !important;
+					display: none;
+				}
+			}
+		}
+	}
+		
+	
+
+	/* M A S O N R Y */
+	&__masonry {
+		
+		height: 100%;
+		
+		&-image {
+			height: 100%;
+			
+			&-container {
+				display: flex;
+				align-items: center;
+				height: 100%;
+
+				img {
+					height: 100%;
+					max-width: 1024px;
+					width: 100%;
+					margin: 0 auto;
+					object-fit: contain;
+				}
+			}
+
+		}
+
+		.slick-next::before,
+		.slick-prev::before {
+			display: none;
+		}
+
+		.slick-prev, 
+		.slick-next {
+			// z-index: 99;
+			background-repeat: no-repeat;
+
+			&:hover {
+				background-repeat: no-repeat;
+			}
+			
+		}
+
+		.slick-prev {
+			left: 0;
+			background-image: url('../images/after.svg');
+
+			&:hover {
+				background-image: url('../images/after.svg');
+			}
+
+			@include under(mobile) {
+				left: -35px;
+			}
+		}
+
+		.slick-next {
+			right: 0;
+			background-image: url('../images/before.svg');
+			
+			&:hover {
+				background-image: url('../images/before.svg');
+			}
+
+			@include under(mobile) {
+				right: -45px;
+			}
+		}
+	}
+
+	/* close pop op slider masonry */
+	&__close_JS {
+		width: 80px;
+	    height: 80px;
+	    position: absolute;
+	    z-index: 9999;
+	    top: 20px;
+	    cursor: pointer;
+	    padding: 30px;
+	    right: 30px;
+	    @include under (sm) {
+	        right: 0px;
+		}
+	}
+
+}
+
+.modal {
+	position: fixed !important;
+	top: 0px;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	opacity: 1;
+	z-index: 999;
+	background: rgba(255, 255, 255, 0.89);
+	display: none;
+	
+	&.show {
+		display: block;
+	}
+
+	&__close {
+		width: 24px;
+		height: 24px;
+		top:  20px;
+		right: 20px;
+		position: absolute;
+	}
+
+	&__content {
+		padding: 50px 50px;
+		height: 100%;
+		
+		@include under(mobile) {
+			padding: 45px 45px;
+		}
+	}
+}
+
+.flex-control-nav.slick-initialized.slick-slider.slick-vertical {
+	@include under(sm-big) {
+		height: 60% !important;
+		margin-top: 100px;
+	}
+
+	@include under(sm) {
+		height: 80% !important;
+		margin-top: 85px;
+	}
+	
+	@include under(mobile) {
+		height: 70% !important;
+		margin-top: 70px;
+	}
+
+	@include under(xs) {
+		height: 60% !important;
+		margin-top: 100px;
+	}
+}

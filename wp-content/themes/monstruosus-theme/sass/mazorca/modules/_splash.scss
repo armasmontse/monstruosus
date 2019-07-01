@@ -1,0 +1,161 @@
+.splash {
+    @mixin container-pads {
+        padding-left: 100px;
+        padding-right: 100px;
+        @include under(680px) {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        @include under(xs) {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+    &__container {
+        @include bg-cover(center);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        @include under(xs) {
+            // justify-content: center;
+            margin-bottom: 20px;
+        }
+        min-height: 100vh;
+        padding-top: 80px;
+        padding-bottom: 40px;
+        @include under(680px) {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+        @include under(xs) {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    }
+
+    &__p {
+        font-family: f(circular-bold);
+        font-size: 30px;
+        line-height: 1.3;
+        color: c(white);
+        font-weight: bold;
+        white-space: nowrap;
+        &:nth-child(3) { margin-top: 24px;}
+        @include under(520px) {
+            font-size: 24px;
+            &:nth-child(3) { margin-top: 14px;}
+        }
+        @include under(420px) {
+            font-size: 18px;
+        }
+        &--pink {
+            color: c(pink);
+            cursor: pointer;
+            &.success {
+                margin-top: 25px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+    &__text {
+        &-container {
+            max-width: 700px;
+            width: 100%;
+            @include container-pads;
+            margin-bottom: 10px;
+            &--pink {
+                @include link-states {
+                    .splash__p {
+                        text-decoration: underline;
+                        color: darken(c(pink), 10%);
+                    }
+                }
+            }
+            @include under(680px) {
+                max-width: 100%;
+                width: auto;
+                display: inline-block;
+                margin-bottom: 20px;
+                margin-left: auto;
+                margin-right: auto;
+
+            }
+            @include under(xs) {
+                margin-bottom: 10px;
+            }
+        }
+    }
+    &__logo {
+        &-container {
+            @include container-pads;
+        }
+        width: 100%;
+        margin-bottom: 30px;
+        @include under(680px) {
+            max-width: 461px;
+            margin: 0 auto;
+        }
+        @include under(sm) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__copyright {
+        font-family: f(circular-bold);
+        @include container-pads;
+        text-align: right;
+        @include under(680px) {
+            text-align: center;
+        }
+        font-size: 8px;
+        color: c(white);
+    }
+
+    &__input {
+        font-family: f(circular-bold);
+        font-size: 26px;
+        @include under(xs) {
+            font-size: 15px;
+        }
+        border: 2px solid c(pink);
+         @mixin placeholder-styles {
+            color: c(grey);
+         }
+
+         &::-webkit-input-placeholder {
+             @include placeholder-styles;
+         }
+
+         &:-moz-placeholder {
+             @include placeholder-styles;
+         }
+
+         &::-moz-placeholder {
+             @include placeholder-styles;
+         }
+
+         &:-ms-input-placeholder {
+             @include placeholder-styles;
+         }
+        &--submit {
+            max-width: 100px;
+            @include under(xs) {
+                max-width: 70px;
+                line-height: 5px;
+            }
+            background-color: c(pink);
+            color: c(white);
+            border: 2px solid c(pink);
+        }
+        &-container {
+            display: flex;
+            width: 100%;
+            height: 40px;
+            @include under(xs) {
+                height: 25px;
+            }
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    }
+}

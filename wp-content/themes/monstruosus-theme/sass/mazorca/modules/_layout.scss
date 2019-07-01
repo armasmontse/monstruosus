@@ -1,0 +1,68 @@
+.layout {
+
+
+	&__wallpaper {
+		min-height: calc(100vh - 190px - 135px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+
+	&__title {
+		color: black;
+		font-size: 8em;
+		font-family: f(sans);
+		margin-bottom: 0.5em;
+	}
+
+	&__content {
+		margin: 20px 0;
+		@extend %paragraph-legals;
+		padding: 0 30px;
+		
+		@include over(md) {
+			padding: 0 90px;
+		}
+		
+		@include under(xs) {
+			padding: 0 15px;
+		}
+		
+		h1, h2, h3, h4, h5, h6 {
+			font-size: 18.23px;
+			font-weight: bold;
+			margin-bottom: 1.3em;
+		}
+
+		p {
+			font-weight: 300;
+			// margin-bottom: 28px;
+			margin-bottom: 5px;
+		}
+
+		strong {
+			font-weight: normal;
+			margin-bottom: 0px;
+		}
+
+		a {
+			text-decoration: underline;
+		}
+	}
+
+	&__button {
+		background-color: black;
+		color: white;
+		padding: 10px;
+		font-family: f(sans);
+		font-weight: 300;
+		font-size: 14px;
+		border: 1px solid black;
+
+		&:hover {
+			background-color: transparent;
+			color: black;
+		}
+	}
+}

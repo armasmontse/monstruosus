@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.98 20.49"><defs><style>.cls-1{fill:#231f20;}</style></defs><title>flecha2</title><g id="Capa_2" data-name="Capa 2"><g id="Layer_1" data-name="Layer 1"><polygon class="cls-1" points="18.69 0 18.09 0.6 27.3 9.82 0 9.82 0 10.67 27.39 10.67 18.18 19.89 18.78 20.49 28.98 10.29 18.69 0"/></g></g></svg>

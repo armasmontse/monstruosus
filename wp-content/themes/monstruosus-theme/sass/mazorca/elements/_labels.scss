@@ -1,0 +1,75 @@
+%label {
+	font-family: f(circular-bold);
+}
+
+
+/* Single product */
+%label-single-price, .label-single-price {
+	@extend %label;
+	color: c(gray-text);
+	font-size: 21px;
+	line-height: 24px;
+	font-weight: lighter;
+}
+
+%label-single-price-number, .label-single-price-number {
+	@extend %label-single-price;
+	color: c(grey-dark);
+	font-weight: 100;
+}
+
+%label-summary-step, .label-summary-step {
+	line-height: 21px !important;
+	font-family: f(circular-bold) !important;
+	font-weight: 300 !important;
+	font-size: 18px !important;
+	line-height: 21px !important;
+	color: c(gray-text);
+
+	@include under(sm) {
+		font-size: 15px;
+		line-height: 18px;
+	}
+}
+
+%label-button, .label-button {
+	font-size: 13px;
+	text-transform: uppercase;
+	font-family: f(circular-bold);
+	font-weight: normal;
+}
+
+%label-quantity, .label-quantity {
+	@extend %label-button;
+	color: c(gray-text);
+	font-family: f(sans);
+}
+
+%label-nav, .label-nav {
+	font-family: f(circular-bold);
+	font-size: 16.4px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	line-height: 29px;
+	color: c(gray-text);
+}
+
+%label-nav-title, .label-nav-title {
+	font-family: f(circular-bold);
+	font-size: 22.7px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	line-height: 29px;
+	color: c(gray-text);
+}
+
+%label-cart-form, .label-cart-form {
+	@extend %label-summary-step;
+	font-weight: 100 !important;
+}
+
+%label-collaterals-text, .label-collaterals-text {
+	@extend %label-summary-step;
+	font-weight: 400 !important;
+}
+

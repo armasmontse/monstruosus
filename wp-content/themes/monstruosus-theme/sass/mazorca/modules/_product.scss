@@ -1,0 +1,141 @@
+.products {
+	$col-1: 100%/12;
+	$gutter: 20px;
+	$gutter-pad: $gutter/2;
+    $pad: $gutter/3;
+
+	width: 100%;
+	max-width: 1240px;
+	height: 100%;
+	min-height: calc(100vh - 325px);
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
+	margin:0 auto;
+
+	@include under(sm) {
+		justify-content: center;
+	}
+	.product {
+		@include ternary-column-maker($gutter:$gutter)
+		@include under(sm) {
+			width: calc(#{$col-1} * 12);
+			padding-right: 0px !important;
+			padding-left: 0px !important;
+		}
+
+		.woocommerce-loop-product__link {
+			margin: 50px auto;
+	    	position: relative;
+	    	display: block;
+		}
+
+		span.onsale {
+			display: none;
+		}
+
+		img.wp-post-image {
+			width: 33%;
+			min-width: 130px;
+		    margin: 0 auto;
+		    height: auto;
+		}
+
+		.woocommerce-loop-product__title {
+			@extend %sbtitle-index-product;
+			width: 62%;
+			text-align: center;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+}
+
+
+.product {
+	margin-bottom: 50px;
+
+	&-navbar-placeholder {
+		height: 50px;
+		width: 100%;
+		display: none;
+		@include under(sm) {
+			height: 0px;
+		}
+		@include under(xs) {
+			height: auto;
+		}
+	}
+}
+
+
+/* s h o p */
+.woocommerce ul.products[class*=columns-] li.product, .woocommerce-page ul.products[class*=columns-] li.product {
+	@include under(xs) {
+		width: 100% !important;
+	}
+}
+.woocommerce .products ul, .woocommerce ul.products {
+	margin: 0 auto !important;
+}
+
+.woocommerce ul.products li.product a img {
+	width: 58% !important;
+	min-width: 152px !important;
+    margin: 0 auto !important;
+    height: auto !important;
+		@include under(sm) {
+			width: 28% !important;
+			min-width: 136px !important;
+		}
+}
+.woocommerce ul.products li.product .woocommerce-loop-product__title{
+	@extend %sbtitle-index-product;
+	width: 80% !important;
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+    white-space: inherit;
+    text-overflow: ellipsis;
+}
+
+//paginador
+.woocommerce nav.woocommerce-pagination ul li a, .woocommerce nav.woocommerce-pagination ul li span{
+	font-family: f(sans);
+	font-size: 15px;
+
+	color: #797a7c;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current{
+	color: black;
+	background-color: transparent;
+}
+
+/* Esconder precio y boton en Shop */
+.page-title, .woocommerce-result-count, .woocommerce-ordering {
+	display: none;
+}
+
+.products {
+
+	.add_to_cart_button, .product_type_simple {
+		display: none;
+	}
+}
+
+.woocommerce ul.products li.product .price {
+	display: none;
+}
+
+.woocommerce ul.products li.product .button {
+	display: none;
+}

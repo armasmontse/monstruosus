@@ -1,0 +1,245 @@
+.cltvo-woocommerce {
+	max-width: $container-max-width;
+    margin: 0 auto;
+
+	.entry {
+		width: 100%;
+	}
+
+	/* Cart */
+	.cart-container {
+		margin: 0 auto;
+		max-width: $container-max-width;
+		
+		@include under(mobile) {
+			width: 100%;
+		}
+
+
+		/* Form de resúmen de compra */
+		.woocommerce-cart-form {
+			
+			.shop_table {
+				border: none;
+
+				td {
+					border: none;
+				}
+
+				.quantity {
+					
+					/* Label cantidad de producto */
+					.label-quantity {
+						@extend %label-collaterals-text;
+						margin-right: 10px;
+					    line-height: 35px;
+					}
+					
+					/* Input cantidad de productos */
+					input.qty {
+						font-size: 16px;
+					}
+
+				
+				}
+				
+				.product-thumbnail {
+					padding: 20px !important;
+				}
+			}
+			
+			/* quantity__box */
+			.quantity{
+				&__box {
+					
+					@include under(sm) {
+						justify-content: flex-end;
+					}
+					
+					p.label-quantity {
+						@include under(sm) {
+							display: none;
+						}	
+					}
+
+					input {
+						background: transparent;
+					}	
+				}
+			}
+			
+			/* Cupón descuento */
+			.coupon {
+				display: flex;
+
+				.button {
+					margin-left: 15px;
+				    font-size: 15px !important;
+				    @include under(xs) {
+					    font-size: 12px !important;
+					}
+				}
+
+				input#coupon_code {
+				border: none;
+				border-bottom: 2px solid #000;
+				padding: 0px;
+					@include over(sm-big) {
+						width: 130px;
+					}
+					
+				}
+			}
+			
+			button.button {
+				font-size: 15px !important;
+				@include under(xs) {
+				    font-size: 12px !important;
+				}
+			}
+			
+			/* Botón 'Update cart' */
+			input.button {
+				@extend %label-collaterals-text;
+				@extend %button-cart;
+				padding: .0px 1em !important;
+			}
+			button.button {
+				@extend %label-collaterals-text;
+				@extend %button-cart;
+			}
+		}
+		
+
+		/* Table resúmen de pago */
+		.cart-collaterals {
+			.shop_table {
+				border: none;
+
+				td, th {
+					border: none;
+				}
+				
+				/* Shipping */
+				.shipping {
+					@extend %label-collaterals-text;
+
+					th {
+						font-weight: 400 !important;
+					}
+				}
+			}
+		}
+	}
+	.woocommerce-cart-form__contents {
+		input.button {
+			padding: .0px 1em !important;
+		}
+	}
+	
+}
+
+.entry {
+	padding: 0 90px;
+	@include under(sm) {
+		padding: 0 30px;
+	}
+	@include under(xs) {
+		padding: 0 15px;
+	}
+}
+.cart-empty {
+	font-family: "Circular Std", sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    color: #353434;
+    margin-bottom: 30px;
+}
+a.button.wc-backward {
+	@extend %button-cart;
+}
+.wc-proceed-to-checkout {
+	a.cltvo-button-border{
+		@extend %button-cart;
+	}
+}
+.woocommerce .woocommerce-info .button {
+	@extend %button-cart;
+}
+.woocommerce table.my_account_orders td  {
+	.woocommerce-button.view, .woocommerce-button.pay, .woocommerce-button.cancel {
+		@extend %button-cart;
+		width: 120px;
+		display: block;
+		
+		@include under(sm) {
+			width: auto;
+		}
+	}
+	.woocommerce-button.view {
+		margin-bottom: 20px;
+	    margin-top: 20px;
+	}
+
+}
+.woocommerce table.shop_table_responsive tr td::before, .woocommerce-page table.shop_table_responsive tr td::before {
+	content: none;
+}
+.woocommerce-orders-table__cell-order-actions {
+// display: flex;
+//    flex-direction: row;
+//    justify-content: space-between;
+
+}
+.woocommerce-MyAccount-content {
+	mark{
+		padding: 3px;
+	    background-color: #d8d8d8;
+	}
+}
+.woocommerce-button--next, .woocommerce-button--previous{
+	@extend %button-cart;
+}
+.woocommerce-MyAccount-navigation-link {
+	height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+	a {
+		padding: 30px 30px;
+		background-color: transparent;
+		@include under(sm) {
+		    padding: 0px 30px;
+		}
+	}
+	&.is-active {
+		background-color: #d8d8d8;
+
+	}
+}
+.woocommerce-Addresses {
+	margin-top: 30px;
+    line-height: 30px;
+}
+
+.woocommerce-cart table.cart td.actions .coupon .input-text {
+	padding: 5px 10px;
+}
+
+.cltvo-woocommerce .cart-container .woocommerce-cart-form .shop_table .product-thumbnail {
+    padding: 0px 0px !important;
+}
+
+.woocommerce-cart table.cart img {
+	width: 60px !important;
+}
+
+
+.woocommerce form .form-row {
+	margin: 0 0 25px !important;
+}
+
+.woocommerce ul#shipping_method li input {
+    margin: 7px .5px;
+}

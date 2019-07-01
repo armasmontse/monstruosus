@@ -1,0 +1,45 @@
+//_________________________ Config:Fuentes _________________________ \\
+
+/**
+ * Declare fonts using the Mixin
+ */
+
+/// Refer to font families through mapped variables.
+/// Font families must be written as lists, that is, between parenthesis.
+///
+///
+@include declara-font-face(programme_regularregular, '../fonts/programme_regularregular', normal);
+
+@include declara-font-face(Circular Std, '../fonts/CircularStd-Bold', normal);
+@include declara-font-face(Circular Std, '../fonts/CircularStd-Black', bold);
+@include declara-font-face(Circular Std, '../fonts/CircularStd-Book', 300);
+
+
+
+// @font-face {
+// 	font-family: 'programme_regularregular';
+// 	src: url('../fonts/programme_regularregular.eot');
+// 	src: url('../fonts/programme_regularregular.eot?#iefix') format('embedded-opentype'), url('../fonts/programme_regularregular.woff') format('woff'), url('../fonts/programme_regularregular.ttf') format('truetype');
+// 	font-weight: normal;
+// 	font-style: normal;
+// }
+
+// @font-face {
+// 	font-family: 'Circular Std';
+// 	src: url('../fonts/CircularStd-Bold.eot');
+// 	src: url('../fonts/CircularStd-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/CircularStd-Bold.woff') format('woff'), url('../fonts/CircularStd-Bold.ttf') format('truetype');
+// 	font-weight: bold;
+// 	font-style: normal;
+// }
+
+
+$fonts:(
+	sans: (programme_regularregular, sans-serif),
+	circular-bold: ('Circular Std', sans-serif),
+
+
+);
+
+@function f($font) {
+	@return map-get($fonts, $font);
+}

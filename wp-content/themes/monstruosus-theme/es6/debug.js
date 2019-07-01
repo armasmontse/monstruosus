@@ -1,0 +1,1 @@
+export const tap = (...args) => { console.log.apply(console, args); return args[args.length -1]}

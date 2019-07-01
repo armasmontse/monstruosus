@@ -1,0 +1,66 @@
+%title {
+	font-family: f(sans);
+}
+
+/* Template */
+%title-template-img, .title-template-img {
+	font-size: 100px;
+	letter-spacing: 3px;
+	font-family: f(circular-bold);
+	font-weight: bold;
+	@include under(sm) {
+		font-size: 75px;
+	}
+	@include under(xs) {
+		font-size: 50px;
+	}
+}
+
+%title-template, .title-template {
+	font-size: 52px;
+	letter-spacing: 1px;
+	line-height: 62px;
+	font-family: f(circular-bold);
+	font-weight: bold;
+	color: c(black);
+}
+
+%sbtitle-template, .sbtitle-template {
+	@extend %title-template;
+	font-size: 34px;
+	font-weight: normal;
+	line-height: 41px;
+
+}
+
+%txt-template, .txt-template {
+	@extend %sbtitle-template;
+	font-size: 34px;
+	font-weight: 300;
+
+}
+/* Index Products */
+%sbtitle-index-product, .sbtitle-index-product {
+	font-size: 48px;
+	letter-spacing: 0.4px;
+	font-family: f(circular-bold);
+	color: c(grey);
+
+}
+
+%title-product-name, .title-product-name {
+	font-family: f(circular-bold);
+	font-size: 31px;
+	letter-spacing: 3px;
+    font-weight: normal;
+}
+
+/* Single Product */
+%title-single-resumen, .title-single-resumen {
+	font-family: f(circular-bold);
+	font-weight:normal;
+	font-size: 23px;
+	line-height: 30px;
+	letter-spacing: 2px;
+	color: c(gray-text);
+}

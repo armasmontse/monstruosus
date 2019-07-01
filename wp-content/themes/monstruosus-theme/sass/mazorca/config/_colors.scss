@@ -1,0 +1,20 @@
+$colors: (
+	base:	#312822,
+	white:	#FFFFFF,
+	pink: 	#F3C8CE,
+	grey: #A5A5A5,
+	grey-dark: #797A7C,
+	black: #000000,
+	gray-text: #353434,
+	turquise: #7FC0C0,
+);
+
+@function c($color:base) {
+	@return map-get($colors, $color);
+}
+
+//no borrar
+$colorForeground: c();
+$colorBackground: c(white);
+$colorFeatured: c(turquise);
+$colorError: #8A1010;
