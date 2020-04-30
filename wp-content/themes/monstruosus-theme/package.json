@@ -44,7 +44,7 @@
   "homepage": "https://github.com/el-cultivo/cltvo-blank-wptheme#readme",
   "dependencies": {
     "gulp-sass": "^4.0.1",
-    "jquery": "^3.2.1",
+    "jquery": "^3.5.0",
     "mazorca-core": "^1.6.2",
     "node-sass": "^4.8.3",
     "qs": "6.5.1",
